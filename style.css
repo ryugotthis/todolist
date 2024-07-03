@@ -37,3 +37,12 @@ body {
   justify-content: space-between;
   padding: 1em;
 }
+.grey {
+  background-color: gray;
+}
+.task-done {
+  text-decoration: line-through;
+}
+.task-taps div {
+  cursor: pointer;
+}
