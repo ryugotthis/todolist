@@ -1,50 +1,173 @@
 body {
-  margin: 0;
+  padding: 10%;
+  /* padding: 0%;
+  
+   */
+  /* margin: 0; */
   background-image: url('images/background.webp');
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
+  background-size: cover;
+
+  background-repeat: no-repeat;
+  /* margin: 5% 20% 0 20%; */
+  height: 100vh;
+  /* 
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center; */
 }
 .container {
-  background-color: white;
-  min-height: 100vh;
+  /* margin-bottom: 50%; */
+  /* margin: 10%; */
+  /* background-color: antiquewhite; */
+  padding: 2% 5% 2% 5%;
+  min-height: 60vh;
+  min-width: 35vw;
+  background-color: rgb(254, 247, 252);
+  border-radius: 35px;
+  border: 10px double rgba(60, 183, 197, 0.2);
+
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    rgba(30, 25, 25, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.title {
+  text-align: center;
+  /* color: rgba(88, 211, 207, 0.586); */
+  color: rgba(50, 125, 122, 0.623);
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 800;
+  font-size: 3vw;
+}
+.input-area {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  margin: 1.5em 0;
+}
+
+#taskInput {
+  padding: 3%;
+  text-align: start;
+  width: 500px;
+  border: 2px solid lightgrey;
+  border: 2px solid rgba(99, 216, 212, 0.586);
+  border-radius: 999px;
+  margin-right: 1%;
+}
+#taskInput:focus {
+  background-color: rgba(128, 128, 128, 0.1);
+  border: 2px solid lightgrey;
+  outline: none;
+  border: 2px solid rgba(99, 216, 212, 0.586);
+  /* border: none; */
+}
+#taskInput:hover {
+  background-color: rgba(128, 128, 128, 0.1);
+}
+#addBtn {
+  background-color: antiquewhite;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* size: 100px; */
+}
+#addBtn:hover {
+  background-color: rgb(237, 190, 212);
 }
 .task-area {
-  border: 1px solid lightgrey;
-  margin-top: 2em;
+  /* border: 1px solid lightgrey; */
+  margin-top: 0em;
+  /* background-color: white; */
+}
+#taskInput {
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 1.2vw;
 }
 .task-taps {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 700;
+  color: rgba(42, 158, 152, 0.623);
   display: flex;
   border-bottom: 1px solid lightgrey;
   position: relative;
 }
-.task-taps div {
+.task-taps .btn {
   padding: 1em;
+  background-color: transparent;
+}
+
+.task-taps .selected {
+  background-color: antiquewhite;
 }
 #underline {
   height: 4px;
   width: 65px;
-  background-color: pink;
+  background-color: rgb(72, 212, 212);
+  /* background-color: rgb(243, 116, 171); */
   position: absolute;
   left: 0px;
-  top: 54px;
+  /* top: 54px; */
   /* top: 0;52px; */
   padding: 0px;
   transition: 0.5s;
 }
 .task {
+  margin: 0.7em 0;
   display: flex;
   justify-content: space-between;
-  padding: 1em;
+  padding: 1%;
+  height: 3em;
+  border: 3px solid rgb(231, 231, 231);
+  border-radius: 20px;
+  align-items: center;
 }
-.grey {
-  background-color: gray;
+.plan {
+  /* font-family: 'Nanum Gothic Coding', monospace; */
+  font-weight: bold;
+  color: rgba(42, 158, 152);
+}
+.color-change {
+  background-color: rgba(128, 128, 128, 0.318);
+  /* transition: 5s; */
 }
 .task-done {
   text-decoration: line-through;
 }
-.task-taps div {
+
+.btn {
   cursor: pointer;
+}
+.btn:hover {
+  background-color: antiquewhite;
+  transition: 0.5s;
+}
+button {
+  border: none;
+  background-color: transparent;
+}
+.task-taps .btn:hover {
+}
+@media screen and (max-width: 80rem) {
+  body {
+    /* padding: 10%; */
+    /* height: 100vh; */
+
+    /* height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-repeat: repeat; */
+  }
+  .title {
+    font-size: 5vw;
+  }
+  .input-area {
+    margin: 0 0 4% 0;
+  }
+  #taskInput {
+    height: 4vh;
+    font-size: 3vw;
+  }
 }

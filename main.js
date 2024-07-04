@@ -13,8 +13,9 @@ let taskList = [];
 let filterList = [];
 let mode = 'all';
 let underline = document.getElementById('underline');
-let bars = document.querySelectorAll('.task-taps .bar');
-//  bars.forEach((menu) => menu.addEventListener('click', (e) => Indicator(e)));
+let taps = document.querySelectorAll('.task-taps .btn');
+console.log(taps);
+taps.forEach((menu) => menu.addEventListener('click', (e) => selectMenu(e)));
 addBtn.addEventListener('click', add);
 taskInput.addEventListener('keypress', function (event) {
   if (event.key === 'Enter') {
@@ -60,19 +61,19 @@ function render() {
   }
   for (let i = 0; i < list.length; i++) {
     if (list[i].isComplete == true) {
-      resultHTML += `<div class="task grey">
-      <div class="task-done">${list[i].taskContent}</div>
+      resultHTML += `<div class="task color-change">
+      <span class="task-done plan">${list[i].taskContent}</span>
       <div>
-        <button onclick="toggleComplete('${list[i].id}')"><i class="fa-solid fa-rotate-left"></i></button>
-        <button onclick="deleteTask('${list[i].id}')"><i class="fa-solid fa-trash" style="color: #ff1414;"></i></button>
+        <button class="btn" onclick="toggleComplete('${list[i].id}')"><i class="fa-solid fa-rotate-left fa-2x" style="color: white;"></i></button>
+        <button class="btn" onclick="deleteTask('${list[i].id}')"><i class="fa-solid fa-trash fa-2x" style="color: gray;"></i></button>
       </div>
     </div>`;
     } else {
       resultHTML += `<div class="task">
-            <div>${list[i].taskContent}</div>
+            <span class="plan">${list[i].taskContent}</span>
             <div>
-              <button onclick="toggleComplete('${list[i].id}')"><i class="fa-solid fa-check" style="color: #21cc1e;"></i></button>
-              <button onclick="deleteTask('${list[i].id}')"><i class="fa-solid fa-trash" style="color: #ff1414;"></i></button>
+              <button class="btn" onclick="toggleComplete('${list[i].id}')"><i class="fa-solid fa-check fa-2x" style="color: pink;"></i></button>
+              <button class="btn" onclick="deleteTask('${list[i].id}')"><i class="fa-solid fa-trash fa-2x" style="color: gray;"></i></button>
             </div>
           </div>`;
     }
@@ -108,6 +109,7 @@ function deleteTask(id) {
   render();
 }
 function filter(event) {
+  let tapClick = false;
   if (event) {
     mode = event.target.id;
     underline.style.left = event.currentTarget.offsetLeft + 'px';
@@ -117,6 +119,13 @@ function filter(event) {
       event.currentTarget.offsetHeight -
       1 +
       'px';
+    // tapClick = !tapClick;
+    // if (mode === 'all') {
+    //   console.log('pink');
+    //   event.currentTarget.style.backgroundColor = 'antiquewhite';
+    // } else {
+    //   event.currentTarget.style.backgroundColor = 'none';
+    // }
   }
   filterList = [];
   // console.log(event.target.id); //event.target;
@@ -125,6 +134,7 @@ function filter(event) {
     render();
   } else if (mode === 'notDone') {
     console.log(mode);
+
     for (let i = 0; i < taskList.length; i++) {
       if (taskList[i].isComplete == false) {
         filterList.push(taskList[i]);
@@ -134,6 +144,7 @@ function filter(event) {
     render();
   } else if (mode === 'done') {
     console.log(mode);
+
     for (let i = 0; i < taskList.length; i++) {
       if (taskList[i].isComplete == true) {
         filterList.push(taskList[i]);
@@ -144,12 +155,19 @@ function filter(event) {
   }
 }
 // function Indicator(e) {
-//   underline.style.left = e.currentTarget.offsetLeft + 'px';
-//   underline.style.width = e.currentTarget.offsetWidth + 'px';
-//   underline.style.top =
-//     e.currentTarget.offsetTop + e.currentTarget.offsetHeight - 1 + 'px';
+//   return (e.currentTarget.style.backgroundColor = 'antiquewhite');
 // }
 function randomIDGenerate() {
   return '_' + Math.random().toString(36).substr(2, 9);
 }
 // render();
+function selectMenu(e) {
+  // console.log(e);
+  for (let i = 0; i < taps.length; i++) {
+    taps[i].classList.remove('selected');
+  }
+  if (e) {
+    console.log(e.currentTarget.classList);
+    e.currentTarget.classList.add('selected');
+  }
+}
