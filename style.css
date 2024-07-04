@@ -23,14 +23,16 @@ body {
 .task-taps div {
   padding: 1em;
 }
-#unerline {
+#underline {
   height: 4px;
   width: 65px;
   background-color: pink;
   position: absolute;
   left: 0px;
-  top: 52px;
+  top: 54px;
+  /* top: 0;52px; */
   padding: 0px;
+  transition: 0.5s;
 }
 .task {
   display: flex;

@@ -8,30 +8,42 @@
 
 let addBtn = document.getElementById('addBtn');
 let taskInput = document.getElementById('taskInput');
-// let checkBtn = document.getElementById('checkBtn');
-// let deleteBtn = document.getElementById('deleteBtn');
 let taskTaps = document.querySelectorAll('.task-taps div'); // 배열로생성
 let taskList = [];
 let filterList = [];
 let mode = 'all';
-
+let underline = document.getElementById('underline');
+let bars = document.querySelectorAll('.task-taps .bar');
+//  bars.forEach((menu) => menu.addEventListener('click', (e) => Indicator(e)));
 addBtn.addEventListener('click', add);
-// checkBtn.addEventListener('click', check);
-// deleteBtn.addEventListener('click', deleteList);
+taskInput.addEventListener('keypress', function (event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    document.getElementById('addBtn').click();
+    taskInput.value = '';
+  }
+});
 for (let i = 1; i < taskTaps.length; i++) {
   taskTaps[i].addEventListener('click', function (event) {
     filter(event);
   });
 }
+taskInput.addEventListener('focus', function () {
+  taskInput.value = '';
+});
 
 function add() {
   // 할일 목록에 추가하기
   console.log('clicked');
+  if (taskInput.value === '') {
+    return alert('입력해주세요');
+  }
   let task = {
     id: randomIDGenerate(),
     taskContent: taskInput.value,
     isComplete: false,
   };
+
   // console.log(task);
   taskList.push(task);
   render();
@@ -98,6 +110,13 @@ function deleteTask(id) {
 function filter(event) {
   if (event) {
     mode = event.target.id;
+    underline.style.left = event.currentTarget.offsetLeft + 'px';
+    underline.style.width = event.currentTarget.offsetWidth + 'px';
+    underline.style.top =
+      event.currentTarget.offsetTop +
+      event.currentTarget.offsetHeight -
+      1 +
+      'px';
   }
   filterList = [];
   // console.log(event.target.id); //event.target;
@@ -124,6 +143,12 @@ function filter(event) {
     render();
   }
 }
+// function Indicator(e) {
+//   underline.style.left = e.currentTarget.offsetLeft + 'px';
+//   underline.style.width = e.currentTarget.offsetWidth + 'px';
+//   underline.style.top =
+//     e.currentTarget.offsetTop + e.currentTarget.offsetHeight - 1 + 'px';
+// }
 function randomIDGenerate() {
   return '_' + Math.random().toString(36).substr(2, 9);
 }
