@@ -45,7 +45,6 @@ function add() {
     isComplete: false,
   };
 
-  // console.log(task);
   taskList.push(task);
   render();
 }
@@ -119,17 +118,8 @@ function filter(event) {
       event.currentTarget.offsetHeight -
       1 +
       'px';
-    // tapClick = !tapClick;
-    // if (mode === 'all') {
-    //   console.log('pink');
-    //   event.currentTarget.style.backgroundColor = 'antiquewhite';
-    // } else {
-    //   event.currentTarget.style.backgroundColor = 'none';
-    // }
   }
   filterList = [];
-  // console.log(event.target.id); //event.target;
-  // mode = event.target.id;
   if (mode === 'all') {
     render();
   } else if (mode === 'notDone') {
@@ -160,7 +150,6 @@ function filter(event) {
 function randomIDGenerate() {
   return '_' + Math.random().toString(36).substr(2, 9);
 }
-// render();
 function selectMenu(e) {
   // console.log(e);
   for (let i = 0; i < taps.length; i++) {

@@ -1,39 +1,23 @@
 body {
   padding: 10%;
-  /* padding: 0%;
-  
-   */
-  /* margin: 0; */
   background-image: url('images/background.webp');
   background-size: cover;
-
   background-repeat: no-repeat;
-  /* margin: 5% 20% 0 20%; */
   height: 100vh;
-  /* 
-  
-  display: flex;
-  flex-direction: column;
-  align-items: center; */
 }
 .container {
-  /* margin-bottom: 50%; */
-  /* margin: 10%; */
-  /* background-color: antiquewhite; */
   padding: 2% 5% 2% 5%;
   min-height: 60vh;
   min-width: 35vw;
   background-color: rgb(254, 247, 252);
   border-radius: 35px;
   border: 10px double rgba(60, 183, 197, 0.2);
-
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(30, 25, 25, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .title {
   text-align: center;
-  /* color: rgba(88, 211, 207, 0.586); */
   color: rgba(50, 125, 122, 0.623);
   font-family: 'Nanum Myeongjo', serif;
   font-weight: 800;
@@ -41,7 +25,6 @@ body {
 }
 .input-area {
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   margin: 1.5em 0;
@@ -71,16 +54,11 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  /* size: 100px; */
 }
 #addBtn:hover {
   background-color: rgb(237, 190, 212);
 }
-.task-area {
-  /* border: 1px solid lightgrey; */
-  margin-top: 0em;
-  /* background-color: white; */
-}
+
 #taskInput {
   font-family: 'Nanum Myeongjo', serif;
   font-size: 1.2vw;
@@ -105,11 +83,8 @@ body {
   height: 4px;
   width: 65px;
   background-color: rgb(72, 212, 212);
-  /* background-color: rgb(243, 116, 171); */
   position: absolute;
   left: 0px;
-  /* top: 54px; */
-  /* top: 0;52px; */
   padding: 0px;
   transition: 0.5s;
 }
@@ -124,13 +99,11 @@ body {
   align-items: center;
 }
 .plan {
-  /* font-family: 'Nanum Gothic Coding', monospace; */
   font-weight: bold;
   color: rgba(42, 158, 152);
 }
 .color-change {
   background-color: rgba(128, 128, 128, 0.318);
-  /* transition: 5s; */
 }
 .task-done {
   text-decoration: line-through;
@@ -151,14 +124,9 @@ button {
 }
 @media screen and (max-width: 80rem) {
   body {
-    /* padding: 10%; */
-    /* height: 100vh; */
-
-    /* height: 100%; */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-repeat: repeat; */
   }
   .title {
     font-size: 5vw;
@@ -169,5 +137,6 @@ button {
   #taskInput {
     height: 4vh;
     font-size: 3vw;
+    padding: 2%;
   }
 }
