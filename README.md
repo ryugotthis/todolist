@@ -1,6 +1,6 @@
 # To Do List
 
-!["website"](images/description.png)
+!["website"](images/discription.png)
 !["mobile"](images/thumbnail.png)
 
 ## 사용한 기술
