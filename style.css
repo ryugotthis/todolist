@@ -139,4 +139,7 @@ button {
     font-size: 3vw;
     padding: 2%;
   }
+  .plan {
+    margin-left: 5%;
+  }
 }
