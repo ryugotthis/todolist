@@ -81,7 +81,8 @@ body {
 }
 #underline {
   height: 4px;
-  width: 65px;
+  width: 52px;
+  top: 49px;
   background-color: rgb(72, 212, 212);
   position: absolute;
   left: 0px;
